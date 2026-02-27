@@ -1,5 +1,4 @@
 import random
-
 def newpop(Nnd, cromlim):
     """
     Gera população inicial aleatória
@@ -11,19 +10,15 @@ def newpop(Nnd, cromlim):
     
     Ncrom = len(cromlim)  # tamanho da matriz de limites
     
-    # Inicializa população
     populacao = []
     
-    # Para cada indivíduo
     for j in range(Nnd):
         individuo = []
         
-        # Para cada cromossomo
         for i in range(Ncrom):
             inf = cromlim[i][0]  # limite inferior
             sup = cromlim[i][1]  # limite superior
             
-            # Gera valor aleatório
             valor = random.uniform(inf, sup)
             individuo.append(valor)
         
@@ -43,6 +38,5 @@ Nnd = 5  # 5 indivíduos
 
 populacao = newpop(Nnd, cromlim)
 
-# Exibir resultado
 for i, ind in enumerate(populacao):
     print(f"Indivíduo {i+1}: {[round(v, 2) for v in ind]}")
